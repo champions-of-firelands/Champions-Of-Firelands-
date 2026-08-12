@@ -1,0 +1,323 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+
+body {
+    min-height: 100vh;
+    background:
+        linear-gradient(
+            rgba(25, 31, 31, 0.33),
+            rgba(25, 31, 31, 0.33)
+        ),
+        url("images/back.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: serif;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(235, 240, 240, 0.20);
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    color: #30302c;
+    border: 1px solid rgba(255, 255, 255, 0.40); 
+}
+
+.hero { 
+    text-align: center; 
+    font-weight: bold;
+    margin-top: 55px;
+    color: #464640;
+}
+
+.hero h2 {
+    font-size: 30px;
+}
+
+.hero p {
+    font-size: 21px;
+}
+
+.site-story {
+    margin-top: 130px;
+    background: #ffffea73;
+    text-align: justify;
+    text-align: center;
+    padding: 16px;
+    border-radius: 8px 0;
+    border: 1px solid rgba(255, 255, 255, 0.40);
+}
+
+.characters-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 50%;
+}
+
+.character-section {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    width: min(1100px, 92%);
+    height: 780px;
+    margin: 40px 0;
+    padding-top: 30px;
+    gap: 30px;    
+}
+
+.character-card {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 auto;
+    width: min(360px, 34vw);
+}
+
+.character-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.caption {
+    position: relative;
+    z-index: 1;
+    flex: 0 1 550px;
+    margin-top: 38px;
+}
+
+.details {
+    position: relative;
+    min-height: 400px;
+    padding: 40px 38px 42px;
+    text-align: center;
+    color: #30302c;
+    text-shadow: 0.25px 0.25px 0.25px #1e1e1e;
+    font-weight: bold;
+    background: rgba(235, 240, 240, 0.33);
+    border: 1px solid rgba(255, 255, 255, 0.33);
+    border-radius: 58px 0 58px 0;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 0 4px #e9e9e9c2;
+}
+
+.details::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -44px;
+    left: 68px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    pointer-events: none;
+}
+
+.details h2 {
+    margin: 0 0 70px;
+    color: #5e5a4e;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 500;
+}
+
+.details p {
+    margin: 0;
+    color: #5e5a4e;
+    font-size: clamp(1.15rem, 2vw, 1.8rem);
+    line-height: 2.5;
+    font-weight: 400;
+}
+                         /* نوار نقره ای */
+.firelands-separator {
+    width: 80%;
+    max-width: 720px;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    overflow: hidden;
+}
+
+.separator-line {
+    position: relative;
+    flex: 1;
+    height: 1px;
+    overflow: hidden;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(210, 220, 232, 0.85),
+        rgba(255, 255, 255, 0.95),
+        rgba(210, 220, 232, 0.85),
+        transparent
+    );
+    box-shadow:
+        0 0 4px rgba(220, 230, 245, 0.8),
+        0 0 10px rgba(170, 190, 220, 0.55),
+        0 0 20px rgba(130, 160, 200, 0.25);
+}
+
+.separator-line::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -35%;
+    width: 35%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 1),
+        transparent
+    );
+    animation: silver-line-shine 3.5s linear infinite;
+}
+
+.separator-star {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    color: #f5f8ff;
+    font-size: 25px;
+    line-height: 1;
+    text-shadow:
+        0 0 4px #ffffff,
+        0 0 9px #dbe8ff,
+        0 0 18px #a9c7ef,
+        0 0 32px rgba(116, 165, 230, 0.8);
+
+    animation: silver-star-pulse 2.2s ease-in-out infinite;
+}
+
+.separator-star::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(190, 215, 255, 0.45);
+    filter: blur(12px);
+    animation: silver-aura 2.2s ease-in-out infinite;
+}
+
+@keyframes silver-star-pulse {
+    0%,
+    100% {
+        opacity: 0.78;
+        transform: scale(0.9) rotate(0deg);
+        text-shadow:
+            0 0 4px #ffffff,
+            0 0 8px #dbe8ff,
+            0 0 16px #a9c7ef,
+            0 0 25px rgba(116, 165, 230, 0.6);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2) rotate(45deg);
+        text-shadow:
+            0 0 5px #ffffff,
+            0 0 12px #ffffff,
+            0 0 22px #c9ddff,
+            0 0 40px rgba(116, 165, 230, 1);
+    }
+}
+
+@keyframes silver-aura {
+    0%,
+    100% {
+        opacity: 0.35;
+        transform: scale(0.7);
+    }
+
+    50% {
+        opacity: 0.85;
+        transform: scale(1.5);
+        }
+ }
+ 
+@keyframes silver-line-shine {
+    0% {
+        left: -35%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+/* نسخه‌ی موبایل */
+@media (max-width: 600px) {
+    .story-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+    .firelands-separator {
+        width: 88%;
+        min-height: 55px;
+        margin: 25px auto;
+        gap: 12px;
+    }
+
+    .separator-star {
+        width: 28px;
+        height: 28px;
+        font-size: 21px;
+    }
+
+    .separator-line {
+        height: 1px;
+    }
+}
+
+@media (max-width: 750px) {
+      .character-section {
+        flex-direction: column;
+        align-items: center;
+        width: 70vw;
+        min-height: auto;
+        padding: 30px 0 70px;
+        gap: 25px;
+    }
+
+    .character-card {width: min(200px, 82vw);}
+   
+    .caption { width: 100%; margin-top: 0;}
+    
+    .details {
+        min-height: auto;
+        padding: 40px 24px 35px;
+        border-radius: 40px 0 40px 0;
+    }
+    
+   .details::before { top: -22px; left: 28px;}
+   .details h2 { margin-bottom: 35px; font-size: 2.1rem;}
+   .details p { font-size: 1.1rem; line-height: 2;}
+
+}
+
+footer {
+    color: #30302c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(235, 240, 240, 0.50);
+    border: 1px solid rgba(255, 255, 255, 0.40);
+    padding: 10px;
+    box-shadow:   6px 6px 6px #303030, 
+                    inset -3px -3px 6px #999999;
+}
