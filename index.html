@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>انتخاب شخصیت</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 🔥 نوار اسکرول دستی کاراکترها -->
+  <section class="character-section">
+
+    <article class="character-item">
+        <figure class="arc-figure">
+            <img src="doctor.png" alt="دکتر">
+        </figure>
+
+        <div class="character-info">
+            <h3>دکتر </h3>
+            <p>
+درمانگر گروه قهرمانان که با دانش و قدرت آتش از هم‌رزمانش محافظت می‌کند.
+            </p>
+        </div>
+    </article>
+
+    <article class="character-item">
+        <figure class="arc-figure">
+            <img src="fighter.png" alt="جنگجو">
+        </figure>
+
+        <div class="character-info">
+            <h3>جنگجوی </h3>
+            <p>
+   مبارزی قدرتمند و سریع که در خط مقدم سرزمین‌های آتش می‌جنگد.
+            </p>
+        </div>
+    </article>
+
+    <article class="character-item">
+        <figure class="arc-figure">
+            <img src="hunter.png" alt="شکارچی">
+        </figure>
+
+        <div class="character-info">
+            <h3>شکارچی </h3>
+            <p>
+    شخصیتی چابک که از فاصله‌ی دور دشمنان را هدف قرار می‌دهد.
+            </p>
+        </div>
+    </article>
+    
+     <article class="character-item">
+        <figure class="arc-figure">
+            <img src="traveler.png" alt="ماجراجو">
+        </figure>
+
+        <div class="character-info">
+            <h3>جهانگرد</h3>
+            <p>
+   هر فرهنگ و تمدن رو نشونش رو از جهانگرد بپرس
+            </p>
+        </div>
+    </article>
+    
+        <article class="character-item">
+        <figure class="arc-figure">
+            <img src="gangster.png" alt="گنگستر">
+        </figure>
+
+        <div class="character-info">
+            <h3>گنگستر</h3>
+            <p>
+
+            </p>
+        </div>
+    </article>
+
+    <article class="character-item">
+        <figure class="arc-figure">
+            <img src="detective.png" alt="جنگجو">
+        </figure>
+
+        <div class="character-info">
+            <h3>کارآگاه</h3>
+            <p>
+  سرنخ ها نشون از مجرم میدن
+            </p>
+        </div>
+    </article>
+
+    <article class="character-item">
+        <figure class="arc-figure">
+            <img src="sarhang.png" alt="شکارچی">
+        </figure>
+
+        <div class="character-info">
+            <h3>سرهنگ</h3>
+            <p>
+  نمی‌دونم چی بنویسم😁
+            </p>
+        </div>
+    </article>
+    
+     <article class="character-item">
+        <figure class="arc-figure">
+            <img src="porfessr.png" alt="حرفه ای">
+        </figure>
+
+        <div class="character-info">
+            <h3>حرفه ای</h3>
+            <p>
+ کار بلد و همه چیز دان
+            </p>
+        </div>
+    </article>
+
+</section>
+
+<script>
+    const characterItems = document.querySelectorAll(".character-item");
+
+    characterItems.forEach((item) => {
+        item.addEventListener("click", () => {
+            characterItems.forEach((otherItem) => {
+                otherItem.classList.remove("active");
+            });
+
+            item.classList.add("active");
+        });
+    });
+</script>
+
+
+   
+</body>
+</html>
