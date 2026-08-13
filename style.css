@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #283e79;
+    min-height: 100vh;
+    font-family: Vazirmatn, Tahoma, sans-serif;
+    overflow-x: hidden;
+}
+
+.character-section {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    align-items: flex-end;
+    padding: 40px 20px;
+}
+
+/* هر شخصیت شامل تصویر و پنل اطلاعات است */
+.character-item {
+    flex: 0 0 180px;
+    width: 180px;
+    min-height: 260px;
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+    scroll-snap-align: center;
+    transition: flex-basis 0.5s ease, width 0.5s ease;
+}
+
+/* وقتی شخصیت فعال یا hover شد، برای پنل فضا باز می‌شود */
+.character-item:hover,
+.character-item.active {
+    flex-basis: 390px;
+    width: 390px;
+}
+
+/* قاب تصویر */
+.arc-figure {
+    flex: 0 0 180px;
+    width: 180px;
+    height: 260px;
+    margin: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* تصویر شخصیت */
+.arc-figure img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform-origin: bottom center;
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+/* زوم شخصیت */
+.character-item:hover .arc-figure img,
+.character-item.active .arc-figure img {
+    transform: scale(1.25);
+    filter: drop-shadow(0 12px 22px rgba(255, 170, 60, 0.45));
+}
+
+/* پنل مشخصات */
+.character-info {
+    direction: rtl;
+    width: 190px;
+    flex: 0 0 190px;
+    align-self: center;
+    opacity: 0;
+    transform: translateX(-15px);
+    pointer-events: none;
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+}
+
+/* نمایش مشخصات هنگام زوم */
+.character-item:hover .character-info,
+.character-item.active .character-info {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.character-info h3 {
+    color: #ffc15a;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.character-info p {
+    color: #d8d3df;
+    font-size: 0.85rem;
+    line-height: 1.9;
+}
+
+@media (max-width: 600px) {
+    .character-section {
+        gap: 12px;
+        padding: 30px 14px;
+    }
+
+    .character-item {
+        flex-basis: 125px;
+        width: 125px;
+        min-height: 210px;
+    }
+
+    .character-item:hover,
+    .character-item.active {
+        flex-basis: 290px;
+        width: 290px;
+    }
+
+    .arc-figure {
+        flex-basis: 125px;
+        width: 125px;
+        height: 210px;
+    }
+
+    .character-item:hover .arc-figure img,
+    .character-item.active .arc-figure img {
+        transform: scale(1.15);
+    }
+
+    .character-info {
+        width: 145px;
+        flex-basis: 145px;
+    }
+
+    .character-info h3 {
+        font-size: 0.9rem;
+    }
+
+    .character-info p {
+        font-size: 0.72rem;
+        line-height: 1.7;
+    }
+}
+
+ر
