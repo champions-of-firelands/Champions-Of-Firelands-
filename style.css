@@ -18,8 +18,7 @@ body {
 header {
     color: #fff;
     text-align: center;
-    background: rgba(255, 255, 255, 0.27);
-    backdrop-filter: blur(1px);
+    background: #283e7979;
     position: sticky;
     top: 15px;
     z-index: 100;
