@@ -85,7 +85,7 @@ header {
 .hero-eyebrow {
     display: inline-block;
     color: #ffd06a;
-    font-size: 0.98rem;
+    font-size: 0.99rem;
     letter-spacing: 1px;
     margin-bottom: 18px;
 }
@@ -277,6 +277,9 @@ header {
 }
 
 @media (max-width: 600px) {
+    .hero-eyebrow {
+        font-size: 0.95rem;
+    }
     .character-section {
         gap: 12px;
         padding: 80px 14px;
