@@ -289,13 +289,13 @@ header {
     text-align: justify;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .hero-eyebrow {
         font-size: 0.95rem;
     }
     .character-section {
         gap: 12px;
-        padding: 80px 14px;
+        padding: 100px 14px;
     }
 
     .character-item {
