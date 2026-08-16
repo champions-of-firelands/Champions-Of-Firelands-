@@ -13,6 +13,7 @@ body {
     min-height: 100vh;
     font-family: "Morabba", "Vazirmatn", sans-serif;
     overflow-x: hidden;
+    background-attachment: scroll;
 }
 
 header {
