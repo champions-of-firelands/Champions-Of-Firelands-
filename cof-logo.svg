@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="75%">
+      <stop offset="0%" stop-color="#2a0d0d"/>
+      <stop offset="55%" stop-color="#120608"/>
+      <stop offset="100%" stop-color="#080404"/>
+    </radialGradient>
+    <linearGradient id="fire" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffe27a"/>
+      <stop offset="35%" stop-color="#ff9a3c"/>
+      <stop offset="70%" stop-color="#ff5e1f"/>
+      <stop offset="100%" stop-color="#d91a1a"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffc24d"/>
+      <stop offset="50%" stop-color="#ff6a1a"/>
+      <stop offset="100%" stop-color="#ffc24d"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <circle cx="256" cy="256" r="248" fill="url(#bg)"/>
+  <circle cx="256" cy="256" r="238" fill="none" stroke="url(#ring)" stroke-width="6" opacity="0.85"/>
+  <circle cx="256" cy="256" r="226" fill="none" stroke="#ff7a1a" stroke-width="1.5" opacity="0.3"/>
+
+  <g filter="url(#softGlow)">
+    <path d="M256 66 C 243 90, 224 110, 224 132 C 224 151, 239 166, 256 166 C 273 166, 288 151, 288 132 C 288 110, 269 90, 256 66 Z" fill="url(#fire)"/>
+    <path d="M256 104 C 249 118, 239 128, 239 140 C 239 150, 247 158, 256 158 C 265 158, 273 150, 273 140 C 273 128, 263 118, 256 104 Z" fill="#ffd98a" opacity="0.95"/>
+  </g>
+
+  <text x="256" y="316" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="175" fill="url(#fire)" filter="url(#glow)" letter-spacing="4">COF</text>
+</svg>
